@@ -1,0 +1,33 @@
+﻿{
+  "ReRoutes": [
+    {
+      "UpstreamPathTemplate": "/apiservice/{controller}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/apiservice/{controller}",
+      "DownstreamScheme": "http",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 5011
+        },
+        {
+          "host": "localhost",
+          "port": 5012
+        }
+      ],
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
+      "ServiceName": "ApiService",
+      "UseServiceDiscovery": true
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500
+    },
+    "BaseUrl": "http://localhost:5000"
+  }
+}

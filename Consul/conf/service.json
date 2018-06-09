@@ -1,0 +1,41 @@
+{
+  "encrypt": "7TnJPB4lKtjEcCWWjN6jSA==",
+  "services": [
+    {
+      "id": "ApiServiceA",
+      "name": "ApiService",
+      "tags": [ "ApiServiceA" ],
+      "address": "localhost",
+      "port": 5011,
+      "checks": [
+        {
+          "id": "ApiServiceA_Check",
+          "name": "ApiServiceA_Check",
+          "http": "http://localhost:5011/health",
+          "interval": "10s",
+          "tls_skip_verify": false,
+          "method": "GET",
+          "timeout": "1s"
+        }
+      ]
+    },
+    {
+      "id": "ApiServiceB",
+      "name": "ApiService",
+      "tags": [ "ApiServiceB" ],
+      "address": "localhost",
+      "port": 5012,
+      "checks": [
+        {
+          "id": "ApiServiceB_Check",
+          "name": "ApiServiceB_Check",
+          "http": "http://localhost:5012/health",
+          "interval": "10s",
+          "tls_skip_verify": false,
+          "method": "GET",
+          "timeout": "1s"
+        }
+      ]
+    }
+  ]
+}
